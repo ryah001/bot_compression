@@ -5,7 +5,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, ContextTypes, filters
 import ffmpeg
 
-TOKEN = "7422606069:AAFNBAsE4yUAIlZN1XZRwUsh7wN8TY7PZbU"
+TOKEN = "8582663417:AAGUfSsfbUACYSJj8qN19Cu1-eNDgHH0d5c"
 
 # --- Serveur Flask pour keep-alive ---
 app = Flask(__name__)
@@ -103,3 +103,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
