@@ -1,6 +1,12 @@
 services:
   - type: web
-    name: bot-compression
-    env: python
-    buildCommand: "apt-get update && apt-get install -y ffmpeg && pip install -r requirements.txt"
-    startCommand: "python main.py"
+    name: telegram-video-audio-bot
+    env: docker
+    plan: free
+    region: frankfurt
+    healthCheckPath: /ping
+    dockerCommand: "python bot.py"
+    envVars:
+      - key: 
+        sync: false  # vous ajouterez la valeur depuis Render Dashboard
+    autoDeploy: true
