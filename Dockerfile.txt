@@ -1,0 +1,25 @@
+# Image Python stable
+FROM python:3.11-slim
+
+# Installation de FFmpeg
+RUN apt-get update && \
+    apt-get install -y ffmpeg && \
+    apt-get clean
+
+# Répertoire de travail
+WORKDIR /app
+
+# Copier requirements
+COPY requirements.txt /app/
+
+# Installer dépendances Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copier tout le projet
+COPY . /app/
+
+# Exposer le port utilisé pour le keep-alive
+EXPOSE 8080
+
+# Commande de lancement du bot
+CMD ["python", "bot.py"]
